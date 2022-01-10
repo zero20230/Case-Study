@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+<br>
+<h2>Search Employee </h2>
+<div class="container">
+  <br>
+  <form class="row gy-2 gx-3 align-items-center" [formGroup]="getForm" (ngSubmit)="OnSubmit()">
+    <div class="col-auto">
+      <div class="input-group">
+        <div class="input-group-text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-person-badge-fill" viewBox="0 0 16 16">
+            <path
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z" />
+          </svg>
+        </div>
+        <input type="text" class="form-control" id="firstName" placeholder="FirstName" formControlName="firstName" />
+      </div>
+    </div>
+    <div class="col-auto">
+      <label class="visually-hidden" for="autoSizingInputGroup">lastName</label>
+      <div class="input-group">
+        <div class="input-group-text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-person-badge-fill" viewBox="0 0 16 16">
+            <path
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z" />
+          </svg>
+        </div>
+        <input type="text" class="form-control" id="lastName" placeholder="lastName" formControlName="lastName" />
+      </div>
+    </div>
+    <div class="col-auto">
+      <label class="visually-hidden" for="autoSizingInputGroup">Position</label>
+      <div class="input-group">
+        <div class="input-group-text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
+            <path
+              d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
+          </svg>
+        </div>
+        <input type="text" class="form-control" id="position" placeholder="position" formControlName="position" />
+      </div>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">
+        Search
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+      </button>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-success" (click)="Reset()">
+        clear
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser"
+          viewBox="0 0 16 16">
+          <path
+            d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+        </svg>
+      </button>
+    </div>
+  </form>
+
+  <br>
+</div>
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2 col-md-5 offset-md-3 ">
+      <ol class="list-group list-group-numbered" *ngIf="response.length>=1">
+        <div *ngFor="let item of response">
+          <div class="card ">
+            <div class="card-body">
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+              </svg>
+              <br>
+              <br>
+              <strong> First Name:</strong> {{ item.firstName }}
+              <div *ngIf="item.middleName!=null">
+                <strong> Middle Name:</strong> {{ item.middleName }}
+              </div>
+              <strong> Last Name:</strong> {{ item.lastName }}
+              <br>
+
+              <strong> BirthDate:</strong> {{ item.birthDate}}
+              <br>
+
+              <strong>Position:</strong> {{ item.position }}
+              <br>
+
+              <strong> Id:</strong> {{ item._id }}
+
+            </div>
+            <br>
+
+            <div class="container">
+              <div class="row">
+                <div class="col col-md-5 offset-1">
+                  <button type="button" class="btn btn-outline-primary" (click)="goToView(item._id)">View
+                    Employee</button>
+                </div>
+                <div class="col-md-5">
+                  <button type="button" class="btn btn-outline-primary" (click)="goToEdit(item._id)">Edit
+                    Employee</button>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-5 offset-1">
+                  <button type="button" class="btn btn-outline-primary" (click)="goToAdd(item._id)"> Add
+                    Compensation</button>
+                </div>
+                <div class="col-md-5 ">
+                  <button type="button" class="btn btn-outline-primary" (click)="goToViewCompensation(item._id)"> view
+                    Compensation</button>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+          <br>
+        </div>
+      </ol>
+    </div>
+  </div>
+  <p *ngIf="response.length<1" class="text-danger">{{results}}</p>
+</div>

@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<br>
+<h2>Please introduce the new values </h2>
+<div class="container">
+    <form [formGroup]="editCompensationForm" (ngSubmit)="OnSubmit()">
+        <div class="form-row">
+            <div class="col-md-3">
+                <br>
+                <div class="form-group">
+                    <label for="amount:">Amount</label>
+                    <input type="number" class="form-control" id="amount" formControlName="amount" placeholder=".45"
+                        required />
+
+                    <label for="Type:">Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Bonus"
+                        formControlName="description" />
+                </div>
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">
+            Update Compensation
+        </button>
+    </form>
+</div>

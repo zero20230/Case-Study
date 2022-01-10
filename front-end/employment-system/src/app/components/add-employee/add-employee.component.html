@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<br>
+<h2>Add Employee </h2>
+<div class="container">
+  <form [formGroup]="postForm" (ngSubmit)="OnSubmit()">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="First Name:">First Name: </label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName" required />
+            <span class="help-block" *ngIf="!postForm.get('firstName')?.valid && postForm.get('firstName')?.touched ">
+              Please introduce a valid first name
+            </span>
+            <label for="Middle Name:">Middle Name: </label>
+            <input type="text" class="form-control" id="middleName" formControlName="middleName" />
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+          <div class="form-row">
+            <label for="Last Name:">Last Name: </label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName" required />
+            <span class="help-block" *ngIf="!postForm.get('lastName')?.valid && postForm.get('lastName')?.touched">
+              Please  introduce a valid last name
+              <br>
+            </span>
+            <label for="birthDate:">birthDate</label>
+            <input type="date" class="form-control" id="birthDate" formControlName="birthDate" required />
+            <span class="help-block" *ngIf="!postForm.get('birthDate')?.valid && postForm.get('birthDate')?.touched">
+              Please introduce a valid date
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+          <div class="form-row">
+            <label for="position:">position: </label>
+            <input type="text" class="form-control" id="position" formControlName="position" required />
+            <span class="help-block" *ngIf="!postForm.get('position')?.valid && postForm.get('position')?.touched">
+              Please introduce a valid position</span>
+          </div>
+        </div>
+        <br>
+
+        <button class="btn btn-primary" type="submit">
+          Submit
+        </button>
+  </form>
+</div>

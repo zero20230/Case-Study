@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<br>
+<h2>Add Compensation</h2>
+<div class="container">
+    <form [formGroup]="addCompensationForm" (ngSubmit)="OnSubmit()">
+        <div class="form-row">
+            <div class="col-md-3">
+                <br>
+                <div class="form-group">
+                    <label for="Type:">Type</label>
+                    <select class="form-control" id="type" formControlName="type">
+                        <option value="salary">Salary</option>
+                        <option value="bonus">Bonus</option>
+                        <option value="commision">Commision</option>
+                        <option value="allowance">Allowance</option>
+                        <option value="adjustment">Adjustment</option>
+                    </select>
+                </div>
+
+                <label for="amount:">Amount</label>
+                <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="2553.45"
+                    required />
+
+                <label for="Type:">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="Bonus"
+                    formControlName="description" />
+
+                <label for="Type:">Date</label>
+                <input type="date" class="form-control" id="date" formControlName="date" />
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">
+            Submit
+        </button>
+    </form>
+</div>
